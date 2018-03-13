@@ -25,7 +25,7 @@ class TodoViewController: UIViewController {
         self.todoListTableView.tableFooterView = UIView()
 
         self.todoListTableView.estimatedRowHeight = 40
-        self.todoListTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.todoListTableView.separatorStyle = UITableViewCellSeparatorStyle.none
 
 
         let addButton = UIButton(type: UIButtonType.custom)
