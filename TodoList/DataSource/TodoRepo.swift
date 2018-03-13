@@ -75,5 +75,7 @@ public class TodoRepo {
     }
 
     func removeTodoItem(item: ToDoItem) {
+        let item = self.managedContext?.object(with: item.objectID) as! ToDoItem
+        self.managedContext?.delete(item)
     }
 }

@@ -11,8 +11,8 @@ import CoreData
 
 class TodoViewController: UIViewController {
 
-    var todoItems: [NSManagedObject] = []
-    var todoItemsDone: [NSManagedObject] = []
+    var todoItems: [ToDoItem] = []
+    var todoItemsDone: [ToDoItem] = []
 
     @IBOutlet var todoListTableView: UITableView!
 
@@ -25,6 +25,8 @@ class TodoViewController: UIViewController {
         self.todoListTableView.tableFooterView = UIView()
 
         self.todoListTableView.estimatedRowHeight = 40
+        self.todoListTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+
 
         let addButton = UIButton(type: UIButtonType.custom)
         addButton.addTarget(self, action: #selector(self.didPressAddButton), for: UIControlEvents.touchUpInside)
@@ -98,16 +100,34 @@ extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var item: ToDoItem?
         if indexPath.section == 0 {
-            item = self.todoItems[indexPath.row] as? ToDoItem
+            item = self.todoItems[indexPath.row]
         } else if indexPath.section == 1 {
-            item = self.todoItemsDone[indexPath.row] as? ToDoItem
+            item = self.todoItemsDone[indexPath.row]
         }
-        let cell =
+        if let cell =
             tableView.dequeueReusableCell(withIdentifier: TodoItemCell.getReuseIdentifier(),
-                                          for: indexPath) as? TodoItemCell
-        cell?.updateData(item: item!)
-        cell?.todoCellDelegate = self
-        return cell!
+                                          for: indexPath) as? TodoItemCell {
+            cell.updateData(item: item!)
+            cell.todoCellDelegate = self
+            return cell
+        }
+        return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            var item: ToDoItem? = nil
+            if indexPath.section == 0 {
+                item = self.todoItems[indexPath.row]
+            } else if indexPath.section == 1 {
+                item = self.todoItemsDone[indexPath.row]
+            }
+            if item != nil {
+                TodoRepo.sharedRepo.removeTodoItem(item: item!)
+                self.reloadData()
+            }
+        }
     }
 }
 

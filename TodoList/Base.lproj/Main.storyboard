@@ -57,35 +57,35 @@
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XBz-tz-dqj">
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="8Se-kK-rsB"/>
+                                                                <constraint firstAttribute="height" constant="30" id="8Se-kK-rsB"/>
                                                             </constraints>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="XBz-tz-dqj" secondAttribute="trailing" constant="28" id="1TE-Z9-2bU"/>
                                                         <constraint firstItem="ZMA-P2-CeR" firstAttribute="leading" secondItem="XOx-xI-e1w" secondAttribute="leading" constant="20" id="SxL-Wt-CPc"/>
-                                                        <constraint firstAttribute="bottom" secondItem="XBz-tz-dqj" secondAttribute="bottom" id="Wxp-IR-Vg3"/>
-                                                        <constraint firstItem="XBz-tz-dqj" firstAttribute="leading" secondItem="ZMA-P2-CeR" secondAttribute="trailing" id="fBL-SP-Ozy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XBz-tz-dqj" secondAttribute="bottom" constant="10" id="Wxp-IR-Vg3"/>
+                                                        <constraint firstItem="XBz-tz-dqj" firstAttribute="leading" secondItem="ZMA-P2-CeR" secondAttribute="trailing" constant="5" id="fBL-SP-Ozy"/>
                                                         <constraint firstItem="ZMA-P2-CeR" firstAttribute="centerY" secondItem="XOx-xI-e1w" secondAttribute="centerY" id="jby-sL-1mN"/>
                                                         <constraint firstItem="XBz-tz-dqj" firstAttribute="top" secondItem="XOx-xI-e1w" secondAttribute="top" id="oIn-1g-4KP"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.81568627449999997" green="0.85098039219999999" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="XOx-xI-e1w" firstAttribute="top" secondItem="NFL-Fz-oza" secondAttribute="topMargin" constant="1" id="a26-I5-MYN"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XBz-tz-dqj" secondAttribute="trailing" id="fW8-qZ-aGf"/>
                                                 <constraint firstItem="XOx-xI-e1w" firstAttribute="leading" secondItem="NFL-Fz-oza" secondAttribute="leadingMargin" constant="-5" id="rAr-Om-7iD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XOx-xI-e1w" secondAttribute="trailing" constant="-20" id="uK4-E4-9sv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XOx-xI-e1w" secondAttribute="bottom" constant="-7.5" id="uMX-m7-g2k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="XOx-xI-e1w" firstAttribute="leading" secondItem="GVL-QF-rMz" secondAttribute="leading" constant="3" id="Kcb-ZV-47F"/>
-                                            <constraint firstAttribute="trailing" secondItem="XOx-xI-e1w" secondAttribute="trailing" constant="-12" id="Zlb-7m-MRi"/>
+                                            <constraint firstAttribute="trailing" secondItem="XOx-xI-e1w" secondAttribute="trailing" id="Zlb-7m-MRi"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="checkMarkImageView" destination="ZMA-P2-CeR" id="5Y1-Zo-Aw3"/>
